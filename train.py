@@ -187,7 +187,7 @@ def main():
     parser.add_argument("--surgery_until_layer", type=int, default=20)
     parser.add_argument("--relu", action="store_true", help="use relu after projection")
     # training
-    parser.add_argument("--dataset", type=str, default="VisA")
+    parser.add_argument("--dataset", type=str, default="Colon_Kvasir")
     parser.add_argument(
         "--training_mode",
         type=str,

@@ -159,6 +159,7 @@ def main():
         relu=args.relu,
     ).to(device)
     model.eval()
+
     # load checkpoints if exists
     text_file = glob(args.save_path + "/text_adapter.pth")
     assert len(text_file) >= 0, "text adapter checkpoint not found"
