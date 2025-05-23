@@ -55,6 +55,7 @@ def train_text_adapter(
 
         loss_list = []
         for input_data in tqdm(train_loader):
+            print(device)
             image = input_data["image"].to(device)
             mask = input_data["mask"].to(device)
             class_names = input_data["class_name"]
@@ -131,6 +132,7 @@ def train_image_adapter(
         logger.info(f"training image epoch {epoch}:")
         loss_list = []
         for input_data in tqdm(train_loader):
+            print(device)
             image = input_data["image"].to(device)
             mask = input_data["mask"].to(device)
             label = input_data["label"].to(device)
@@ -229,6 +231,7 @@ def main():
     # set device
     use_cuda = torch.cuda.is_available()
     device = torch.device("cuda:0" if use_cuda else "cpu")
+    print(device)
     # ========================================================
     # load model
     # setup image feature extractor after surgery
